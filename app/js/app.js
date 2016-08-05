@@ -10,7 +10,7 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                             );
 
 demoApp.constant("httpConfig", {
-        "serviceApi": "../../web_services/",
+        "serviceApi": "web_services/",
         "login": ""
   });
 

@@ -39,6 +39,7 @@ var path = {
                     'bower_components/angular-toastr/dist/angular-toastr.min.css',
                     'bower_components/font-awesome/css/font-awesome.min.css'
                 ],
+        services: 'web_services/*.json',        
         css: 'app/css/*.css',
         fonts: 'bower_components/font-awesome/fonts/*',
         images: 'app/images/*'
@@ -99,6 +100,10 @@ var path = {
             .pipe(gulp.dest('www/images'))
     });
 
+    gulp.task('copyapi', function(){
+        return gulp.src(path.services)
+            .pipe(gulp.dest('www/web_services'))
+    });
     /* minify and then copy the  */
     // gulp.task('bowerCopy', ['compile-ts'], function () {
     //     return gulp.src($.mainBowerFiles({ paths: config.source }), { read: true })
@@ -125,7 +130,7 @@ var path = {
 
     gulp.task('start', function() {
         runSequence('clean','minifyjs','minifycss','markup','copyMinifiedJs','copyMinifiedCss',
-                        'copyfonts',
+                        'copyfonts','copyapi',
                         'copyimages'
                     );
 
