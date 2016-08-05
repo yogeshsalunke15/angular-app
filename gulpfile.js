@@ -19,10 +19,7 @@ var config = {
 };
 
 var path = {
-        scripts: [  'app/js/*.js', 
-                    'app/js/controllers/*.js','app/js/services/*.js',
-                    'app/js/directives/*.js'
-                 ],
+        scripts: 'app/**/*.js',
         minjs:  ['bower_components/angular/angular.min.js',
                     'bower_components/angular/angular.min.js.map',
                     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
@@ -41,7 +38,7 @@ var path = {
                 ],
         services: 'web_services/*.json',        
         css: 'app/css/*.css',
-        fonts: 'bower_components/font-awesome/fonts/*',
+        fonts: ['bower_components/font-awesome/fonts/*','bower_components/bootstrap/fonts/*'],
         images: 'app/images/*'
     };
 
@@ -54,10 +51,10 @@ var path = {
             .pipe(clean());
     });
 
-    // gulp.task('bowerCopy', function() {
-    //     return gulp.src(mainBowerFiles({ paths: './' }))
-    //     .pipe(gulp.dest('www/bower_dependencies'));
-    // });
+    gulp.task('bowerCopy', function() {
+        return gulp.src(mainBowerFiles({ paths: './' }))
+        .pipe(gulp.dest('www/bower_dependencies'));
+    });
 
     gulp.task('minifyjs', function() {
       return gulp.src(path.scripts)

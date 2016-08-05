@@ -42,7 +42,8 @@ var appBase = path.join(config.source, config.sourceApp),
     appMarkup = path.join(appBase, (config.AllFiles + config.Period + config.HTML)),
     appTypeScripts = path.join(appBase, (config.AllFiles + config.Period + config.TS)),
     buildBase = path.join(config.source, config.buildBase),
-    buildScripts = path.join(buildBase, config.JS),
+    buildScripts = path.join(buildBase, config.
+      ),
     buildStyles = path.join(buildBase, config.CSS),
     buildFonts = path.join(buildBase, config.Fonts),
     buildImages = path.join(buildBase, config.Images),
@@ -202,6 +203,8 @@ gulp.task('constant', ['clean'], function () {
 gulp.task('inject', ['bowerCopy'], function () {
     var jsFilter = $.filter(path.join(buildScripts, config.AllFiles));
     var cssFilter = $.filter(path.join(buildStyles, config.AllFiles));
+ console.log(path.join(buildScripts, config.AllFiles));
+
     return gulp.src(path.join(config.source,'index.html'))
             .pipe($.inject(gulp.src([
                 path.join(buildScripts, config.AllFiles),
