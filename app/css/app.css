@@ -1,0 +1,141 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+.bodybg {
+    background: url(../images/bg4.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar {
+    /*background: #c5472a;*/
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-width: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: 0 0 0px 0 #000;
+    min-height: 45px;
+    background: #438EB9;
+    padding-right: 5px;
+}
+.navbar .navbar-brand {
+    color: #FFF;
+    font-size: 24px;
+    text-shadow: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color:#ffffff;
+}
+
+.navbar-right {
+    margin-right:2px;
+}
+.navbar-right .nav-inline{
+    margin: 0 0 0 5px;
+    float: left;
+}
+
+.tech-nav {
+    height: 100%;
+    margin: 0!important;
+}
+
+.tech-nav>li {
+    line-height: 45px;
+    height: 45px;
+    border-left: 1px solid #E1E1E1;
+    padding: 0;
+    position: relative;
+    float: left;
+}
+.tech-nav>li:first-child {
+    border-left-width: 0;
+}
+.tech-nav>li>a {
+    background-color: #2E6589;
+    color: #FFF;
+    display: block;
+    line-height: inherit;
+    text-align: center;
+    height: 100%;
+    width: auto;
+    min-width: 50px;
+    padding: 0 8px;
+    position: relative;
+}
+.tech-nav li .purple{
+   background: #762c59!important; 
+}
+.tech-nav li .green{
+    background: #2E8965!important;
+}
+.tech-nav li .light-blue {
+    background: #62A8D1!important;
+}
+ul {
+    padding: 0;
+}
+
+.tech-nav>li>a>.tech-icon {
+    display: inline-block;
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    width: 20px;
+}
+.badge {
+    padding-top: 1px;
+    padding-bottom: 3px;
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.tech-nav>li>a>.badge {
+    position: relative;
+    top: -4px;
+    left: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.badge-notify{
+    background-color: #D15B47;
+}
+.badge-msg{
+    background-color: #82AF6F;
+}
+.tech-nav li .tech-caret::after {
+    position: absolute;
+    top: -6px;
+    right: 21px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+.tech-nav .nav-user-photo {
+    margin: -4px 8px 0 0;
+    border-radius: 100%;
+    border: 2px solid #FFF;
+    max-width: 40px;
+}
+.tech-nav .user-info {
+    max-width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+    line-height: 15px;
+    position: relative;
+    top: 6px;
+}
+.user-info small {
+    display: block;
+}
