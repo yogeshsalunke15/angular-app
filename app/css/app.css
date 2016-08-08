@@ -279,15 +279,9 @@ ul {
     padding: 0;
     text-align: center;
 }
-/*.tech-left .nav-list li:before {
-    display: block;
-    position: absolute;
-    top: -1px;
-    left: 0;
-    z-index: 1;
-    height: 41px;
-    width: 3px;
-    max-width: 3px;
-    overflow: hidden;
-    background-color: #629CC9;
-}*/
+.tech-left .nav-list li a{
+   border-left: 3px solid transparent;
+}
+.tech-left .nav-list > li:hover > a{
+    border-left-color: #629CC9;
+}
