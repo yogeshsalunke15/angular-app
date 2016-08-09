@@ -159,13 +159,60 @@
 				<a href="#" class="dropdown-toggle">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text">
-						UI &amp; Elements
+					Left menu1
 					</span>
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
 			</li>
+			<li>
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-desktop"></i>
+					<span class="menu-text">
+					Left menu2
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-desktop"></i>
+					<span class="menu-text">
+					Left menu3
+					</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+			</li>
+			<li ng-init="isCollapsed=true">
+				<a class="tech-cur" ng-click="isCollapsed = !isCollapsed" ng-class="{bgcolor: !isCollapsed}">
+					<i class="menu-icon fa fa-desktop"></i>
+					<span class="menu-text">
+					Left menu4
+					</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<ul class="submenu nav-show" uib-collapse="isCollapsed" true>
+						<li class="active">
+							<a href="javascript:void(0)">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Simple &amp; Dynamic
+							</a>
 
+							<b class="arrow"></b>
+						</li>
+
+						<li class="">
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								jqGrid plugin
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+				</ul>
+			</li>
 	</ul>
+	<div class="sidebar-toggle">
+		<i class="ace-icon fa fa-angle-double-left"></i>
+	</div>
 
 </div>
 
