@@ -1,10 +1,58 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
+    background-color: #E4E6E9;
+    padding-bottom: 0;
+    font-family: 'Open Sans';
+    font-size: 13px;
+    color: #393939;
+    line-height: 1.5;
 }
 .bodybg {
     background: url(../images/bg4.jpg) no-repeat center center fixed;
     background-size: cover;
+}
+
+.main-container:before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    max-width: inherit;
+    bottom: 0;
+    top: 0;
+    background-color: #FFF;
+}
+.tech-skin .sidebar {
+    background-color: #F2F2F2;
+    border-style: solid;
+    border-color: #CCC;
+    border-width: 0 1px 0 0;
+}
+.sidebar {
+    width: 190px;
+    float: left;
+    position: static;
+    padding-left: 0;
+    padding-right: 0;
+}
+.sidebar+.main-content {
+    margin-left: 190px;
+}
+.main-content {
+    margin-left: 0;
+    padding: 0;
+}
+.main-content-inner {
+    float: left;
+    width: 100%;
+}
+.page-content {
+    background-color: #FFF;
+    position: relative;
+    margin: 0;
+    padding: 8px 20px 24px;
 }
 
 .navbar {
@@ -135,6 +183,7 @@ ul {
     line-height: 15px;
     position: relative;
     top: 6px;
+    color: #ffffff;
 }
 .user-info small {
     display: block;
@@ -270,7 +319,6 @@ ul {
     font-size: 13px;
     background-color: #F8F8F8;
     color: #585858;
-
 }
 .tech-left .nav-list>li>a>.menu-icon {
     display: inline-block;
