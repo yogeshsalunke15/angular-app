@@ -6,7 +6,7 @@ angular.module('demoApp').
 			restrict: 'EA',
 			replace: true,
             transclude: true,
-            //controller: 'NavCtrl as nav'
+            controller: 'NavCtrl as nav',
     		templateUrl: 'templates/left-nav.html'
   		};
 	});

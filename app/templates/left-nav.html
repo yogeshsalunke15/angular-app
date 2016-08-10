@@ -1,9 +1,96 @@
-<div class="bootstrap" ng-init="isCollapsed=false">
-	<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse Vertically</button>
-		<hr>
-		<div uib-collapse="isCollapsed" horizontal>
-			<div class="well well-lg">Some content</div>
+<div class="sidebar tech-left" ng-class="{smallNav: smNav}">
+	<div class="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large" ng-hide="smNav">
+			<button class="btn btn-success">
+				<i class="tech-icon fa fa-signal"></i>
+			</button>
+
+			<button class="btn btn-info">
+				<i class="tech-icon fa fa-pencil"></i>
+			</button>
+
+			<button class="btn btn-warning">
+				<i class="tech-icon fa fa-users"></i>
+			</button>
+
+			<button class="btn btn-danger">
+				<i class="tech-icon fa fa-cogs"></i>
+			</button>
 		</div>
-		
-    <a ui-sref="contact" class="btn btn-danger"> Click Me </a>
+		<div class="sidebar-shortcuts-mini" ng-show="smNav">
+			<span class="btn btn-success"></span>
+
+			<span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span>
+
+			<span class="btn btn-danger"></span>
+		</div>
+	</div>
+
+	<ul class="nav nav-list" style="top: 0px;">
+			<li ng-class="{active: nav.menu == 'dash'}">
+				<a href="javascript:void(0)">
+					<i class="menu-icon fa fa-tachometer"></i>
+					<span class="menu-text"> Dashboard </span>
+				</a>
+			</li>
+			<li ng-class="{active: nav.menu == 'l1'}">
+				<a href="javascript:void(0)" ng-click="nav.menuActive('l1')">
+					<i class="menu-icon fa fa-desktop"></i>
+					<span class="menu-text">
+					UI & Elements
+					</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+			</li>
+			<li ng-class="{active: nav.menu == 'l2'}">
+				<a href="javascript:void(0)" ng-click="nav.menuActive('l2')">
+					<i class="menu-icon fa fa-list-ul"></i>
+					<span class="menu-text">
+					Table
+					</span>
+				</a>
+			</li>
+			<li ng-class="{active: nav.menu == 'l3'}">
+				<a href="javascript:void(0)" ng-click="nav.menuActive('l3')">
+					<i class="menu-icon fa fa-pencil-square-o"></i>
+					<span class="menu-text">
+					Forms
+					</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+			</li>
+			<!--ng-click=" isCollapsed = !isCollapsed" ng-class="{bgcolor: !isCollapsed}-->
+			<li ng-class="{active: nav.menu == 'l4'}">
+				<a class="tech-cur" ng-click="nav.menuActive('l4')">
+					<i class="menu-icon fa fa-picture-o"></i>
+					<span class="menu-text">
+					Gallery
+					</span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<ul class="submenu nav-show" uib-collapse="nav.menu !='l4'" true>
+						<li class="active">
+							<a href="javascript:void(0)">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Simple &amp; Dynamic
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+						<li class="">
+							<a href="#">
+								<i class="menu-icon fa fa-caret-right"></i>
+								jqGrid plugin
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+				</ul>
+			</li>
+	</ul>
+	<div class="sidebar-toggle">
+		<i class="tech-icon fa fa-angle-double-left" ng-click="smNav=!smNav"></i>
+	</div>
 </div>
