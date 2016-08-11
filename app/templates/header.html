@@ -98,17 +98,17 @@
 								</span>
 								<i class="tech-icon fa fa-caret-down"></i>
 							</a>
-							<ul class="dropdown-menu tech-caret">
+							<ul class="dropdown-menu tech-caret" ng-controller="AuthenticationCtrl as auth">
 								<li>
 									<a href="profile.html">
 										<i class="tech-icon fa fa-user"></i>
-										Profile
+										Profile {{auth.text}}
 									</a>
 								</li>
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="javascript:" ng-click="auth.logout()">
 										<i class="tech-icon fa fa-power-off"></i>
 										Logout
 									</a>

@@ -9,6 +9,10 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                         ]
                             );
 
+demoApp.run(function($rootScope) {
+    $rootScope.bodybg = 'bodybg';
+});
+
 demoApp.constant("httpConfig", {
         "serviceApi": "web_services/",
         "login": ""
@@ -17,28 +21,29 @@ demoApp.constant("httpConfig", {
   demoApp.config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider, usSpinnerConfigProvider){
 
     localStorageServiceProvider.setPrefix('angularApp').
-                                setStorageType('localStorage').
+                                setStorageType('sessionStorage').
                                 setNotify(true, true).
-                                setStorageCookie(30, '/');;
+                                setStorageCookie(30, '/');
+                                
     usSpinnerConfigProvider.setDefaults({ color: '#af2927'});
 
     $stateProvider
       .state('login', {
           url: '/',
+          controller: 'AuthenticationCtrl as auth',
           templateUrl: 'templates/login.html',
       })
       .state('register', {
           url: '/register',
-          controller: 'AuthenticationCtrl as register',
           templateUrl: 'templates/register.html'
       })
       .state('dashboard', {
         url: "/dashboard",
         controller: 'DashboardCtrl as dash',
         templateUrl: "templates/dashboard.html",
-        // resolve: {
-        //   isLoggedIn: isLoggedIn
-        // }
+        resolve: {
+          isLoggedIn: isLoggedIn
+        }
       })
       .state('contact', {
         url: "/contact",

@@ -21,10 +21,27 @@
     </head>
 
   <body class="{{bodybg}}">
-        
-            <div>
-                <div ui-view></div>
-            </div>             
+   
+            <div class="tech-skin">
+            
+                <header-nav ng-if="bodybg != 'bodybg'"></header-nav>
+
+                <div class="main-container" >
+                    
+                    <left-nav ng-if="bodybg != 'bodybg'"></left-nav>
+
+                    <div class="main-content">
+                        <div class="main-content-inner">
+                            <div class="page-content"> 
+                                    <div ui-view></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer-nav ng-if="bodybg != 'bodybg'"></footer-nav>
+                    
+                </div>
+            </div>          
   </body>
 
 </html>

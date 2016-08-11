@@ -8,8 +8,7 @@ angular.module('demoApp')
             self.username="";
             self.password="";
             self.loginspn = false;
-            $rootScope.bodybg = 'bodybg';
-
+            
             self.login = function () {
 
                 if(angular.isDefined(self.username) && angular.isDefined(self.password)){
@@ -35,6 +34,7 @@ angular.module('demoApp')
                                 closeButton:true,
                                 timeOut: 4000
                             });
+                            $rootScope.bodybg = 'none';
                             $state.go('dashboard');
                         }, 1000);
 
@@ -90,6 +90,12 @@ angular.module('demoApp')
 
             self.generatetoken = function () {
               return Math.random().toString(36).substr(2);
+            };
+
+            self.logout = function () {
+                localStorageService.remove('loginToken');
+                $rootScope.bodybg = 'bodybg';
+                $state.go('login');
             };
 
     }]);

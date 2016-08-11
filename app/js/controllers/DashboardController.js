@@ -7,7 +7,7 @@ angular.module('demoApp')
     	var self = this;
         $rootScope.bodybg = 'none';
         self.homespn = true;
-        self.testvariable = "Hello Yogesh";
+       
         /* factory service call */
         homeService.dashboard().then(function(data){
             //$log.log(data);

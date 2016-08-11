@@ -1,6 +1,6 @@
-<div class="sidebar tech-left" ng-class="{smallNav: smNav}">
+<div class="sidebar tech-left" ng-class="{smallNav: nav.menumin}">
 	<div class="sidebar-shortcuts">
-		<div class="sidebar-shortcuts-large" ng-hide="smNav">
+		<div class="sidebar-shortcuts-large" ng-hide="nav.menumin">
 			<button class="btn btn-success">
 				<i class="tech-icon fa fa-signal"></i>
 			</button>
@@ -17,7 +17,7 @@
 				<i class="tech-icon fa fa-cogs"></i>
 			</button>
 		</div> 
-		<div class="sidebar-shortcuts-mini" ng-show="smNav">
+		<div class="sidebar-shortcuts-mini" ng-show="nav.menumin">
 			<span class="btn btn-success"></span>
 
 			<span class="btn btn-info"></span>
@@ -91,6 +91,6 @@
 			</li>
 	</ul>
 	<div class="sidebar-toggle">
-		<i class="tech-icon fa fa-angle-double-left" ng-click="smNav=!smNav"></i>
+		<i class="tech-icon fa fa-angle-double-left" ng-click="nav.toggleSidebar()"></i>
 	</div>
 </div>
