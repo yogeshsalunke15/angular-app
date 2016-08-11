@@ -28,15 +28,15 @@
 		</div>
 	</div>
 
-	<ul class="nav nav-list" style="top: 0px;">
-			<li ng-class="{active: nav.menu == 'dash'}">
-				<a href="javascript:void(0)">
+	<ul class="nav nav-list" style="top: 0px;" ng-init="activeMenu='dash'">
+			<li ng-class="{active: activeMenu=='dash'}">
+				<a href="javascript:void(0)" ng-click="activeMenu=(activeMenu !='dash')?'dash':'noMenu'">
 					<i class="menu-icon fa fa-tachometer"></i>
 					<span class="menu-text"> Dashboard </span>
 				</a>
 			</li>
-			<li ng-class="{active: nav.menu == 'l1'}">
-				<a href="javascript:void(0)" ng-click="nav.menuActive('l1')">
+			<li ng-class="{active: activeMenu=='ui'}">
+				<a href="javascript:void(0)" ng-click="activeMenu=(activeMenu!='ui')?'ui':'noMenu'">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text">
 					UI & Elements
@@ -44,16 +44,16 @@
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
 			</li>
-			<li ng-class="{active: nav.menu == 'l2'}">
-				<a href="javascript:void(0)" ng-click="nav.menuActive('l2')">
+			<li ng-class="{active: activeMenu=='table'}">
+				<a href="javascript:void(0)" ng-click="activeMenu=(activeMenu!='table')?'table':'noMenu'">
 					<i class="menu-icon fa fa-list-ul"></i>
 					<span class="menu-text">
 					Table
 					</span>
 				</a>
 			</li>
-			<li ng-class="{active: nav.menu == 'l3'}">
-				<a href="javascript:void(0)" ng-click="nav.menuActive('l3')">
+			<li ng-class="{active: activeMenu == 'form'}">
+				<a href="javascript:void(0)" ng-click="activeMenu=(activeMenu!='form')?'form':'noMenu'">
 					<i class="menu-icon fa fa-pencil-square-o"></i>
 					<span class="menu-text">
 					Forms
@@ -61,26 +61,25 @@
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
 			</li>
-			<!--ng-click=" isCollapsed = !isCollapsed" ng-class="{bgcolor: !isCollapsed}-->
-			<li ng-class="{active: nav.menu == 'l4'}">
-				<a class="tech-cur" ng-click="nav.menuActive('l4')">
+			<li ng-class="{active: activeMenu=='gallary'}">
+				<a class="tech-cur" ng-click="activeMenu=(activeMenu!='gallary')?'gallary':'noMenu'">
 					<i class="menu-icon fa fa-picture-o"></i>
 					<span class="menu-text">
 					Gallery
 					</span>
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
-				<ul class="submenu nav-show" uib-collapse="nav.menu !='l4'" true>
-						<li class="active">
-							<a href="javascript:void(0)">
+				<ul class="submenu nav-show" uib-collapse="activeMenu!='gallary'" true>
+						<li ng-class="{active: SubMenu=='simple'}">
+							<a href="javascript:" ng-click="SubMenu=(SubMenu!='simple')?'simple':'nosub'">
 								<i class="menu-icon fa fa-caret-right"></i>
 								Simple &amp; Dynamic
 							</a>
 
 							<b class="arrow"></b>
 						</li>
-						<li class="">
-							<a href="#">
+						<li ng-class="{active: SubMenu=='jgrid'}">
+							<a href="javascript:" ng-click="SubMenu=(SubMenu!='jgrid')?'jgrid':'nosub'">
 								<i class="menu-icon fa fa-caret-right"></i>
 								jqGrid plugin
 							</a>
