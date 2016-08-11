@@ -54,7 +54,38 @@ body {
     margin: 0;
     padding: 8px 20px 24px;
 }
-
+.nav-list li.active>a:after,
+.nav-list>li:before,
+.nav-list>li>.submenu:before,
+.nav-list>li>.submenu>li:before,
+.sidebar .sidebar-toggle:before,
+.sidebar.menu-min .nav-list>li>.submenu:after,
+.sidebar:before,
+li.divider:before {
+    content: ""
+}
+.sidebar:before {
+    display: block;
+    width: inherit;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: inherit;
+    border-style: inherit;
+    border-color: inherit;
+    border-width: inherit
+}
+.sidebar .sidebar-toggle:before {
+    display: block;
+    height: 0;
+    border-top: 1px solid;
+    border-color: inherit;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 13px
+}
 .navbar {
     /*background: #c5472a;*/
     margin: 0;

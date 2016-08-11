@@ -30,13 +30,11 @@ var path = {
                     'bower_components/angular-local-storage/dist/angular-local-storage.min.js.map',
                     'bower_components/angular-toastr/dist/angular-toastr.tpls.min.js',
                     'bower_components/spin.js/spin.min.js',
-                    'bower_components/angular-spinner/angular-spinner.min.js',
-                    'bower_components/angular-loading-bar/build/loading-bar.min.js'
+                    'bower_components/angular-spinner/angular-spinner.min.js'
                 ],
         mincss: [   'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'bower_components/angular-toastr/dist/angular-toastr.min.css',
-                    'bower_components/font-awesome/css/font-awesome.min.css',
-                    'bower_components/angular-loading-bar/build/loading-bar.min.css'
+                    'bower_components/font-awesome/css/font-awesome.min.css'
                 ],
         services: 'web_services/*.json',        
         css: 'app/css/*.css',
