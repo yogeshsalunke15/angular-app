@@ -5,7 +5,9 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                           'ngAnimate',
                                           'LocalStorageModule',
                                           'toastr',
-                                          'angularSpinner'
+                                          'angularSpinner',
+                                          'validation', 
+                                          'validation.rule'
                                         ]
                             );
 
@@ -41,9 +43,9 @@ demoApp.constant("httpConfig", {
         url: "/dashboard",
         controller: 'DashboardCtrl as dash',
         templateUrl: "templates/dashboard.html",
-        resolve: {
-          isLoggedIn: isLoggedIn
-        }
+        // resolve: {
+        //   isLoggedIn: isLoggedIn
+        // }
       })
       .state('contact', {
         url: "/contact",

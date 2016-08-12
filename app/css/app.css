@@ -520,3 +520,10 @@ ul {
 .sidebar.smallNav~.footer .footer-inner {
     left: 43px;
 }
+.help-block {
+    margin-top:-20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: #c9302c;
+    font-size: 13px;
+}
