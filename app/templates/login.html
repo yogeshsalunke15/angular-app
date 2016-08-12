@@ -22,10 +22,10 @@
       
                 <div class="input-group" ng-class="{'has-error':loginform.password.$invalid && !loginform.password.$pristine }">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" name="password" placeholder="password" ng-model="login.password" required ng-minlength="5" ng-maxlength="15">
+                  <input type="password" class="form-control" name="password" placeholder="password" ng-model="login.password" required ng-minlength="5" ng-maxlength="25">
                 </div>
                    <!--  <span ng-show="loginform.password.$invalid && !loginform.password.$pristine" class="help-block">Password required *</span> -->
-                    <span class="help-block" ng-show="loginform.password.$error.maxlength">Password too long. maximum length is 15</span>
+                    <span class="help-block" ng-show="loginform.password.$error.maxlength">Password too long. maximum length is 25</span>
                     <span class="help-block" ng-show="loginform.password.$error.minlength">Password too short. minimum length is 5</span>
 
                 <div class="input-group col-xs-12 text-center login-action">

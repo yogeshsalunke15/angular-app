@@ -5,9 +5,7 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                           'ngAnimate',
                                           'LocalStorageModule',
                                           'toastr',
-                                          'angularSpinner',
-                                          'validation', 
-                                          'validation.rule'
+                                          'angularSpinner'
                                         ]
                             );
 
