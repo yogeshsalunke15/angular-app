@@ -30,11 +30,11 @@ demoApp.constant("httpConfig", {
     $stateProvider
       .state('login', {
           url: '/',
-          controller: 'AuthenticationCtrl as auth',
           templateUrl: 'templates/login.html',
       })
       .state('register', {
           url: '/register',
+          controller: 'AuthenticationCtrl as register',
           templateUrl: 'templates/register.html'
       })
       .state('dashboard', {

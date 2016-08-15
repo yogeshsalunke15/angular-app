@@ -5,11 +5,9 @@ angular.module('demoApp')
         function($scope, $state, localStorageService, $rootScope, toastr, usSpinnerService, $timeout){
         
             var self = this;
-            self.username="";
-            self.password="";
             self.loginspn = false;
             
-            self.login = function () {
+            self.login = function () { 
                 if(angular.isDefined(self.username) && angular.isDefined(self.password)){
 
                         if(self.username.length == 0 || self.password.trim().length == 0){
@@ -70,7 +68,7 @@ angular.module('demoApp')
                                 closeButton:true,
                                 timeOut: 4000
                             });
-                            $state.go('home');
+                            $state.go('dashboard');
                         }, 1000);
                         
                 }
