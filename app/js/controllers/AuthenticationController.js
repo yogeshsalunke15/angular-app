@@ -8,6 +8,7 @@ angular.module('demoApp')
             self.loginspn = false;
             
             self.login = function () { 
+                
                 if(angular.isDefined(self.username) && angular.isDefined(self.password)){
 
                         if(self.username.length == 0 || self.password.trim().length == 0){

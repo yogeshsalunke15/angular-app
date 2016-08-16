@@ -12,21 +12,26 @@
           </div>
           <div class="panel-body" >
             <form class="form-horizontal loginform"  name="loginform" role="form" ng-submit="login.login()">
-                <div class="input-group">
+                <div class="input-group" ng-class="{ 'has-error' : loginform.username.$invalid && !loginform.username.$pristine }">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" value="" placeholder="username or email" required ng-model="login.username">
+                  <input type="text" class="form-control" name="username" value="" placeholder="username or email" ng-model="login.username" ng-minlength="5" ng-maxlength="10" required>
                 </div>
+                    <span ng-show="loginform.username.$error.minlength" class="help-block">Username too short. minimum length is 5 </span>
+                    <span ng-show="loginform.username.$error.maxlength" class="help-block">Username too long. maximum length is 10 </span>
 
-                <div class="input-group">
+                <div class="input-group" ng-class="{'has-error':loginform.password.$invalid && !loginform.password.$pristine }">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" name="password" placeholder="password" required ng-model="login.password">
-                </div>        
+                  <input type="password" class="form-control" name="password" placeholder="password" ng-model="login.password" ng-minlength="5" ng-maxlength="25" required>
+                </div>   
+                    <span class="help-block" ng-show="loginform.password.$error.maxlength">Password too long. maximum length is 25</span>
+                    <span class="help-block" ng-show="loginform.password.$error.minlength">Password too short. minimum length is 5</span>
+
                 <div class="input-group col-xs-12 text-center login-action">
                   <div class="checkbox">
                   <label>
                     <input type="checkbox" name="remember" value="1" style="margin-top: 10px;"> Remember me &nbsp;
                     <span id="btn-login">
-                        <button type="submit" class="btn btn-success" name="login">Login</button>
+                        <button type="submit" class="btn btn-success" name="submit" ng-disabled="loginform.$invalid">Login</button>
                     </span>
                   </label>
                   </div>
