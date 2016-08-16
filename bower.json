@@ -20,7 +20,8 @@
     "angular-spinner": "^0.8.1",
     "font-awesome": "fontawesome#^4.6.3",
     "angular-google-maps": "^2.3.4",
-    "lodash": "^4.15.0"
+    "lodash": "^4.15.0",
+    "angular-simple-logger": "^0.1.7"
   },
   "devDependencies": {},
   "overrides": {

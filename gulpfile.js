@@ -32,7 +32,8 @@ var path = {
                     'bower_components/spin.js/spin.min.js',
                     'bower_components/angular-spinner/angular-spinner.min.js',
                     'bower_components/angular-google-maps/dist/angular-google-maps.min.js',
-                    'bower_components/lodash/dist/lodash.min.js'
+                    'bower_components/lodash/dist/lodash.min.js',
+                    'bower_components/angular-simple-logger/dist/angular-simple-logger.min.js'
                 ],
         mincss: [   'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'bower_components/angular-toastr/dist/angular-toastr.min.css',

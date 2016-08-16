@@ -5,7 +5,8 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                           'ngAnimate',
                                           'LocalStorageModule',
                                           'toastr',
-                                          'angularSpinner'
+                                          'angularSpinner',
+                                          'uiGmapgoogle-maps'
                                         ]
                             );
 
@@ -19,7 +20,8 @@ demoApp.constant("httpConfig", {
         "login": ""
   });
 
-  demoApp.config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider, usSpinnerConfigProvider){
+  demoApp.config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider, 
+                            usSpinnerConfigProvider){
 
     localStorageServiceProvider.setPrefix('angularApp').
                                 setStorageType('sessionStorage').
@@ -39,7 +41,10 @@ demoApp.constant("httpConfig", {
       .state('register', {
           url: '/register',
           controller: 'AuthenticationCtrl as register',
-          templateUrl: 'templates/register.html'
+          templateUrl: 'templates/register.html',
+          resolve: {
+              onLogin: onLogin
+            }
       })
       .state('dashboard', {
         url: "/dashboard",

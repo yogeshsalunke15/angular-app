@@ -527,3 +527,8 @@ ul {
     color: #c9302c;
     font-size: 13px;
 }
+
+/*Google Map styles*/
+.angular-google-map-container { 
+    height: 400px; 
+}

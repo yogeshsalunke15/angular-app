@@ -8,7 +8,7 @@
         <!-- Div for login spinner-->
           <span us-spinner spinner-on="register.loginspn"></span>
           <div class="panel-heading">
-            <div class="panel-title text-center"><h2>Sign Up to <span class="text-danger">Angular</span></h2></div>
+            <div class="panel-title text-center"><h2>Sign Up Into <span class="text-danger">TechFast</span></h2></div>
           </div>
           <div class="panel-body" >
 
@@ -25,8 +25,8 @@
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
                   <input type="text" class="form-control" name="username" value="" placeholder="Username"  ng-model="register.username" ng-minlength="5" ng-maxlength="10" required>
                 </div>
-                    <span ng-show="registerform.name.$error.minlength" class="help-block">Username too short. minimum length is 5 </span>
-                    <span ng-show="registerform.name.$error.maxlength" class="help-block">Username too long. maximum length is 10 </span>
+                    <span ng-show="registerform.username.$error.minlength" class="help-block">Username too short. minimum length is 5 </span>
+                    <span ng-show="registerform.username.$error.maxlength" class="help-block">Username too long. maximum length is 10 </span>
 
                 <div class="input-group col-xs-6" ng-class="{ 'has-error' : registerform.email.$invalid && !registerform.email.$pristine }">
                   <span class="input-group-addon">@</span>

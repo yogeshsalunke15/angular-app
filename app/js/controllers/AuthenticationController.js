@@ -14,14 +14,12 @@ angular.module('demoApp')
                         if(self.username.length == 0 || self.password.trim().length == 0){
                             toastr.error('Empty value or only spaces are not accepted !',{
                                     closeButton:true,
-                                    timeOut: 4000
+                                    timeOut: 3000
                                 });
                             return;      
                         }
                         self.click = true;
-                        self.username = self.username;
-                        self.password = self.password;
-                        self.loginspn = true;
+                        self.loginspn = false;
                         var randomToken = self.token();
                         var dateToken = new Date();
                         dateToken = Date.parse(dateToken);
@@ -31,7 +29,7 @@ angular.module('demoApp')
                             self.loginspn = false;
                             toastr.success('You have logged in successfully !',{
                                 closeButton:true,
-                                timeOut: 4000
+                                timeOut: 3000
                             });
                             $rootScope.bodybg = 'none';
                             $state.go('dashboard');
@@ -42,7 +40,7 @@ angular.module('demoApp')
 
                     toastr.error('All fields are compulsory !',{
                             closeButton:true,
-                            timeOut: 4000
+                            timeOut: 3000
                         });
                 }
             }
@@ -54,7 +52,7 @@ angular.module('demoApp')
                     if(self.name.length == 0 || self.username.length == 0 || self.password.trim().length == 0 || self.email.length == 0){
                             toastr.error('Empty value or only spaces are not accepted !',{
                                     closeButton:true,
-                                    timeOut: 4000
+                                    timeOut: 3000
                                 });
                             return;      
                     }
@@ -69,7 +67,7 @@ angular.module('demoApp')
                             self.loginspn = false;
                             toastr.success('You have registered successfully !',{
                                 closeButton:true,
-                                timeOut: 4000
+                                timeOut: 3000
                             });
                             $state.go('dashboard');
                         }, 1000);
@@ -78,7 +76,7 @@ angular.module('demoApp')
                 else {
                     toastr.error('All fields are compulsory !',{
                                 closeButton:true,
-                                timeOut: 4000
+                                timeOut: 3000
                             });   
                 }
                 
