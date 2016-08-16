@@ -47,7 +47,7 @@ angular.module('demoApp')
             }
 
             self.register = function (){
-
+                
                 if(angular.isDefined(self.name) && angular.isDefined(self.username) && angular.isDefined(self.password) && angular.isDefined(self.email)){
                     console.log(self.password);
                     if(self.name.length == 0 || self.username.length == 0 || self.password.trim().length == 0 || self.email.length == 0){

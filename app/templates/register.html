@@ -12,29 +12,41 @@
           </div>
           <div class="panel-body" >
 
-            <form class="form-horizontal loginform" role="form" ng-submit="register.register()">
-                <div class="input-group">
+            <form class="form-horizontal loginform" name="registerform" role="form" ng-submit="register.register()">
+
+                <div class="input-group" ng-class="{ 'has-error' : registerform.name.$invalid && !registerform.name.$pristine }">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="name" value="" placeholder="name" required ng-model="register.name">
+                  <input type="text" class="form-control" name="name" value="" placeholder="Full Name" ng-model="register.name" ng-minlength="3" ng-maxlength="40" required>
                 </div>
-                <div class="input-group">
+                    <span ng-show="registerform.name.$error.minlength" class="help-block">Full Name too short. minimum length is 3 </span>
+                    <span ng-show="registerform.name.$error.maxlength" class="help-block">Full Name too long. maximum length is 40 </span>
+
+                <div class="input-group" ng-class="{ 'has-error' : registerform.username.$invalid && !registerform.username.$pristine }">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" value="" placeholder="username" required ng-model="register.username">
+                  <input type="text" class="form-control" name="username" value="" placeholder="Username"  ng-model="register.username" ng-minlength="5" ng-maxlength="10" required>
                 </div>
-                <div class="input-group col-xs-6">
+                    <span ng-show="registerform.name.$error.minlength" class="help-block">Username too short. minimum length is 5 </span>
+                    <span ng-show="registerform.name.$error.maxlength" class="help-block">Username too long. maximum length is 10 </span>
+
+                <div class="input-group col-xs-6" ng-class="{ 'has-error' : registerform.email.$invalid && !registerform.email.$pristine }">
                   <span class="input-group-addon">@</span>
-                  <input type="email" class="form-control" name="email" value="" placeholder="email" required ng-model="register.email">
+                  <input type="email" class="form-control" name="email" value="" placeholder="Email" ng-model="register.email" required>
                 </div>
                 <div class="input-group col-xs-6">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" name="password" placeholder="password" required ng-model="register.password">
+                  <input type="password" class="form-control" name="password" placeholder="Password" ng-model="register.password" ng-minlength="5" ng-maxlength="25" required>
                 </div>
+
+                    <span ng-show="registerform.email.$touched && registerform.email.$invalid" class="help-block" style="float:left;">Please enter a valid email address!</span>
+                    <span class="help-block" ng-show="registerform.password.$error.maxlength" style="float:right;">Password too long. maximum length is 25</span>
+                    <span class="help-block" ng-show="registerform.password.$error.minlength" style="float:right;">Password too short. minimum length is 5</span>
+                
                 <div class="input-group col-xs-12 text-center login-action">
                   <div class="checkbox">
                   <label>
                     <input type="checkbox" name="remember" value="1" style="margin-top: 10px;" required> I agree to terms and conditions &nbsp;
                     <span id="btn-login">
-                        <button type="submit" class="btn btn-success" name="register">Register</button>
+                        <button type="submit" class="btn btn-success" name="register" ng-disabled="registerform.$invalid">Register</button>
                     </span>
                   </label>
                   </div>
