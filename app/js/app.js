@@ -9,12 +9,13 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                         ]
                             );
 
-demoApp.run(function($rootScope) {
-    $rootScope.bodybg = 'bodybg';
-});
+// demoApp.run(function($rootScope) {
+//     $rootScope.bodybg = 'bodybg';
+// });
 
 demoApp.constant("httpConfig", {
         "serviceApi": "web_services/",
+        "images" : "../images",
         "login": ""
   });
 
@@ -31,6 +32,9 @@ demoApp.constant("httpConfig", {
       .state('login', {
           url: '/',
           templateUrl: 'templates/login.html',
+           resolve: {
+            onLogin: onLogin
+          }
       })
       .state('register', {
           url: '/register',
@@ -41,9 +45,9 @@ demoApp.constant("httpConfig", {
         url: "/dashboard",
         controller: 'DashboardCtrl as dash',
         templateUrl: "templates/dashboard.html",
-        // resolve: {
-        //   isLoggedIn: isLoggedIn
-        // }
+        resolve: {
+          isLoggedIn: isLoggedIn
+        }
       })
       .state('contact', {
         url: "/contact",
@@ -71,6 +75,10 @@ demoApp.constant("httpConfig", {
           $location.path('/login');
         }
         return deferred.promise;
+    }
+
+    function onLogin ($rootScope) {
+      $rootScope.bodybg = 'bodybg';
     }
 
   });

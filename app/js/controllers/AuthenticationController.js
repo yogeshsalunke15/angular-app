@@ -18,6 +18,7 @@ angular.module('demoApp')
                                 });
                             return;      
                         }
+                        self.click = true;
                         self.username = self.username;
                         self.password = self.password;
                         self.loginspn = true;
@@ -57,6 +58,7 @@ angular.module('demoApp')
                                 });
                             return;      
                     }
+                    self.click = true;
                     self.loginspn = true;
                     var randomToken = self.token();
                     var dateToken = new Date();
