@@ -1,6 +1,13 @@
 
-<div map-lazy-load="https://maps.google.com/maps/api/js">
-  	<ng-map center="20.5937,78.9629" zoom="4">
-  		
-  	</ng-map>
+<div ng-repeat="dir in directions" map-lazy-load="https://maps.google.com/maps/api/js">
+      <div style="width: 68%; float:left; height:450px">
+        <ng-map style="height:100%" center="{{gmap.center.lat}},{{gmap.center.long}}" zoom="4" default-style="true" >
+          <directions ng-if="gmap.mapDirection" draggable="false"
+            travel-mode="DRIVING"
+            panel="{{dir.panelName}}"
+            origin="{{dir.origin}}"
+            destination="{{dir.destination}}">
+          </directions>
+        </ng-map>
+      </div>
 </div>

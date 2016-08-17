@@ -6,13 +6,15 @@ angular.module('demoApp')
 
     	var self = this;
     	//self.state = $state.current;
-    	
-    	/*Google map API Integration*/
-    	NgMap.getMap().then(function(map) {
-		    // console.log(map.getCenter());
-		    // console.log('markers', map.markers);
-		    // console.log('shapes', map.shapes);
-		  });
+
+    	//NgMap.getMap().then(function(map) {
+		// });
+  		self.center = {lat:'20.5937', long:'78.9629'};
+  		$rootScope.directions = [
+          {origin:"Palo Alto", destination:"Gilroy", panelName:"p1"},
+          {origin:"San Jose", destination:"Mountain View", panelName:"p2"}
+        ];
+        self.mapDirection = true;
     	
      
         
