@@ -6,7 +6,7 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                           'LocalStorageModule',
                                           'toastr',
                                           'angularSpinner',
-                                          'uiGmapgoogle-maps'
+                                          'ngMap'
                                         ]
                             );
 

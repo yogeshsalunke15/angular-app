@@ -14,4 +14,4 @@ Before doing following steps you should have node js and bower instelled on your
 
 Now go to browser and put any of following url to see application running.
 
-    http://127.0.0.1:8080
+    http://127.0.0.1:8090

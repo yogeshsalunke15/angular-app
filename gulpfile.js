@@ -14,7 +14,7 @@ var gulp        = require('gulp'),
 
 var config = {
         host: '127.0.0.1',
-        port: '8080',
+        port: '8090',
         path: 'www'     
 };
 
@@ -31,9 +31,7 @@ var path = {
                     'bower_components/angular-toastr/dist/angular-toastr.tpls.min.js',
                     'bower_components/spin.js/spin.min.js',
                     'bower_components/angular-spinner/angular-spinner.min.js',
-                    'bower_components/angular-google-maps/dist/angular-google-maps.min.js',
-                    'bower_components/lodash/dist/lodash.min.js',
-                    'bower_components/angular-simple-logger/dist/angular-simple-logger.min.js'
+                    'bower_components/ngmap/build/scripts/ng-map.min.js'
                 ],
         mincss: [   'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'bower_components/angular-toastr/dist/angular-toastr.min.css',
