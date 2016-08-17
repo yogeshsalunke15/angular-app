@@ -19,7 +19,7 @@ angular.module('demoApp')
                             return;      
                         }
                         self.click = true;
-                        self.loginspn = false;
+                        self.loginspn = true;
                         var randomToken = self.token();
                         var dateToken = new Date();
                         dateToken = Date.parse(dateToken);

@@ -10,10 +10,6 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                         ]
                             );
 
-// demoApp.run(function($rootScope) {
-//     $rootScope.bodybg = 'bodybg';
-// });
-
 demoApp.constant("httpConfig", {
         "serviceApi": "web_services/",
         "images" : "../images",
@@ -50,6 +46,14 @@ demoApp.constant("httpConfig", {
         url: "/dashboard",
         controller: 'DashboardCtrl as dash',
         templateUrl: "templates/dashboard.html",
+        resolve: {
+          isLoggedIn: isLoggedIn
+        }
+      })
+      .state('googlemap', {
+        url: "/googlemap",
+        controller: 'GooglemapCtrl as gmap',
+        templateUrl: "templates/map.html",
         resolve: {
           isLoggedIn: isLoggedIn
         }

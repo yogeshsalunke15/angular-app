@@ -12,7 +12,7 @@ angular.module('demoApp').
 	});
 	
 angular.module('demoApp').
-	directive('leftNav', function () {
+	directive('leftNav', function ($state) {
 		return {
 			restrict: 'EA',
 			replace: true,

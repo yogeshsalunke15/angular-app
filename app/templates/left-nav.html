@@ -30,18 +30,17 @@
 
 	<ul class="nav nav-list" style="top: 0px;" ng-init="activeMenu='dash'">
 			<li ng-class="{active: activeMenu=='dash'}">
-				<a href="javascript:" ng-click="activeMenu=(activeMenu !='dash')?'dash':'noMenu'">
+				<a ui-sref="dashboard" ng-click="activeMenu=(activeMenu !='dash')?'dash':'noMenu'">
 					<i class="menu-icon fa fa-tachometer"></i>
 					<span class="menu-text"> Dashboard </span>
 				</a>
 			</li>
-			<li ng-class="{active: activeMenu=='ui'}">
-				<a href="javascript:" ng-click="activeMenu=(activeMenu!='ui')?'ui':'noMenu'">
-					<i class="menu-icon fa fa-desktop"></i>
+			<li ng-class="{active: activeMenu=='map'}">
+				<a ui-sref="googlemap" ng-click="activeMenu=(activeMenu!='map')?'map':'noMenu'">
+					<i class="menu-icon fa fa-globe"></i>
 					<span class="menu-text">
-					UI & Elements
+					Google Map
 					</span>
-					<b class="arrow fa fa-angle-down"></b>
 				</a>
 			</li>
 			<li ng-class="{active: activeMenu=='table'}">
