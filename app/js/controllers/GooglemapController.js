@@ -5,18 +5,21 @@ angular.module('demoApp')
         function($scope, $state, $http, $rootScope, usSpinnerService, $timeout, $log, NgMap){
 
     	var self = this;
+    	self.mapLocations = "";
     	//self.state = $state.current;
 
-    	//NgMap.getMap().then(function(map) {
-		// });
   		self.center = {lat:'20.5937', long:'78.9629'};
-  		$rootScope.directions = [
-          {origin:"Palo Alto", destination:"Gilroy", panelName:"p1"},
-          {origin:"San Jose", destination:"Mountain View", panelName:"p2"}
-        ];
-        self.mapDirection = true;
-    	
-     
+        self.showDirection = false;
+        
+        // self.getpos = function (event) {
+        // 	alert("marker draged by user");
+        // 	console.log("Inside Function of Drag Yogesh");
+        // }
+        self.addMarker = function () {alert("Yogesh Salunek");}
+    	self.getDirection = function () {
+    		self.showDirection = true;
+    		self.mapLocations = {origin: self.source, destination:self.destination};
+    	}
         
     
 }]);

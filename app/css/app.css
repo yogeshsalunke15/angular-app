@@ -527,8 +527,11 @@ ul {
     color: #c9302c;
     font-size: 13px;
 }
+.outerdiv{
+    margin-top: 10px;
+}
 
 /*Google Map styles*/
-.angular-google-map-container { 
-    height: 400px; 
+.ngmap{
+    height:420px;
 }
