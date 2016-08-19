@@ -533,5 +533,35 @@ ul {
 
 /*Google Map styles*/
 .ngmap{
-    height:420px;
+    height:560px;
+}
+.map .directionForm {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.map form {
+    padding: 4%;
+    border:1px solid;
+    background: #F2F2F2;
+    border-color: #a9a2a2;
+}
+.map .directionForm label {
+    color: #2B7DBC;
+}
+.map .directionInfo label{
+    color:#7b7574;
+}
+.map form label {
+    font-size: 13px;
+}
+.map .directionInfo{
+    margin-top: 10%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.map .mapcss {
+    margin-bottom: 3%;
+}
+.map .directionInfo .estimation {
+    color:#d15b47;
 }

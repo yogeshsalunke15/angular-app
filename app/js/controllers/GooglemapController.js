@@ -1,15 +1,16 @@
 'use strict';
 
 angular.module('demoApp')
-    .controller('GooglemapCtrl', ['$scope','$state','$http','$rootScope', 'usSpinnerService','$log','NgMap',
-        function($scope, $state, $http, $rootScope, usSpinnerService, $log, NgMap){
+    .controller('GooglemapCtrl', ['$scope','$state','$http','$rootScope', 'usSpinnerService','$log','NgMap','httpConfig',
+        function($scope, $state, $http, $rootScope, usSpinnerService, $log, NgMap, httpConfig){
 
     	var self = this;
     	self.mapLocations = "";
     	//self.state = $state.current;
   		self.center = {lat:'20.5937', long:'78.9629'};
         self.showDirection = false;
-
+        self.mapApiKey = httpConfig.GmapApiKey;
+        
     	self.getDirection = function () {
     /* Invoke google map api service for getting distance & time required to reach between source & destination*/
     		self.showDirection = true;

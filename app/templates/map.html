@@ -1,7 +1,7 @@
 
-<div class="row outerdiv">
+<div class="row outerdiv map" map-lazy-load="https://maps.googleapis.com/maps/api/js?key={{gmap.mapApiKey}}">
    
-   <div class="col-md-8">
+   <div class="col-md-8 mapcss col-sm-12">
         <ng-map zoom="4" center="{{gmap.center.lat}},{{gmap.center.long}}" 
             class="ngmap"  on-click="gmap.addMarker()">
             <div ng-if="gmap.showDirection">
@@ -16,30 +16,34 @@
       </ng-map>
    </div>
 
-   <div class="col-md-4">
-        <div class="form-horizontal">
-            <form name="direction" role="form" ng-submit="gmap.getDirection()">
-            <div class="form-group">
-                <label for="source" class="col-md-4 control-label">Source City:</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" name="source" ng-model="gmap.source" placeholder="Please Enter Source City.." required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="source" class="col-md-4 control-label">Destination City:</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" name="source" ng-model="gmap.destination" placeholder="Please Enter Destination City.." required>
-                </div>
-            </div>
-              <div class="form-group"> 
-                <div class="col-sm-offset-6 col-sm-10">
-                  <button type="submit" class="btn btn-success" ng-disabled="direction.$invalid"><b>Get Direction</b></button>
-                </div>
+   <div class="col-md-4 col-sm-12">
+        <div class="outercss">
+          <form name="direction" class="" role="form" ng-submit="gmap.getDirection()">
+              <div class="row directionForm">
+                  <div class="form-group">
+                      <label for="source">Source Location:</label>
+                      <input type="text" class="form-control" name="source" ng-model="gmap.source" placeholder="Please enter source location" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="source">Destination Location:</label>
+                      <input type="text" class="form-control" name="source" ng-model="gmap.destination" placeholder="Please enter destination location" required>
+                  </div>
+                  <div class="form-group"> 
+                    <div class="col-sm-12" style="text-align:center">
+                      <button type="submit" class="btn btn-success" ng-disabled="direction.$invalid"><b>Get Direction</b></button>
+                    </div>
+                  </div>
               </div>
-            </form>
+              <div class="row directionInfo" ng-if="gmap.showDirection">
+                  <div class="form-group">
+                      <label for="source">Estimated Distance:&nbsp;&nbsp;<span class="estimation">{{gmap.distance}}</span></label>
+                  </div>
+                  <div class="form-group">
+                      <label for="source">Estimated time:&nbsp;&nbsp;<span class="estimation">{{gmap.time}}</span></label>
+                  </div>
+            </div>
+          </form>
         </div>  
-        Direction Distance in KM: {{gmap.distance}} <br>
-        Time Required in Hrs: {{gmap.time}}
    </div>
 
 </div>
