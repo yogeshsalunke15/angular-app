@@ -13,6 +13,7 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
 demoApp.constant("httpConfig", {
         "serviceApi": "web_services/",
         "images" : "../images",
+        "GmapApiKey": "AIzaSyAYpERBFmnc2VYWv0Dz0ICUFtonM2n6Nbw",
         "login": ""
   });
 
