@@ -565,3 +565,6 @@ ul {
 .map .directionInfo .estimation {
     color:#d15b47;
 }
+.txt_center {
+    text-align: center;
+}

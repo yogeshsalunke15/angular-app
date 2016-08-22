@@ -31,7 +31,9 @@ var path = {
                     'bower_components/angular-toastr/dist/angular-toastr.tpls.min.js',
                     'bower_components/spin.js/spin.min.js',
                     'bower_components/angular-spinner/angular-spinner.min.js',
-                    'bower_components/ngmap/build/scripts/ng-map.min.js'
+                    'bower_components/ngmap/build/scripts/ng-map.min.js', 
+                    'node_modules/angular-chart.js/node_modules/chart.js/dist/Chart.min.js', 
+                    'node_modules/angular-chart.js/dist/angular-chart.min.js'
                 ],
         mincss: [   'bower_components/bootstrap/dist/css/bootstrap.min.css',
                     'bower_components/angular-toastr/dist/angular-toastr.min.css',

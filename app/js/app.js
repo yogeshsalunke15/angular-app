@@ -6,7 +6,8 @@ var demoApp = angular.module('demoApp', ['ui.bootstrap',
                                           'LocalStorageModule',
                                           'toastr',
                                           'angularSpinner',
-                                          'ngMap'
+                                          'ngMap',
+                                          'chart.js'
                                         ]
                             );
 
@@ -18,12 +19,15 @@ demoApp.constant("httpConfig", {
   });
 
   demoApp.config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider, 
-                            usSpinnerConfigProvider){
+                            usSpinnerConfigProvider, ChartJsProvider){
 
     localStorageServiceProvider.setPrefix('angularApp').
                                 setStorageType('sessionStorage').
                                 setNotify(true, true).
                                 setStorageCookie(30, '/');
+    ChartJsProvider.setOptions({ 
+            colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] 
+          });
                                 
     usSpinnerConfigProvider.setDefaults({ color: '#af2927'});
 
@@ -59,9 +63,18 @@ demoApp.constant("httpConfig", {
           isLoggedIn: isLoggedIn
         }
       })
-      .state('contact', {
-        url: "/contact",
-        templateUrl: "templates/contact.html",
+      .state('piechart', {
+        url: "/PieChart",
+        controller: 'ChartsCtrl as chart',
+        templateUrl: "templates/PieChart.html",
+        resolve: {
+          isLoggedIn: isLoggedIn
+        }
+      })
+       .state('barchart', {
+        url: "/BarChart",
+        controller: 'ChartsCtrl as chart',
+        templateUrl: "templates/BarChart.html",
         resolve: {
           isLoggedIn: isLoggedIn
         }

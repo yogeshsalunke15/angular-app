@@ -43,13 +43,32 @@
 					</span>
 				</a>
 			</li>
-			<li ng-class="{active: activeMenu=='table'}">
-				<a href="javascript:" ng-click="activeMenu=(activeMenu!='table')?'table':'noMenu'">
-					<i class="menu-icon fa fa-list-ul"></i>
+			<li ng-class="{active: activeMenu=='chart'}">
+				<a href="javascript:" ng-click="activeMenu=(activeMenu!='chart')?'chart':'noMenu'">
+					<i class="menu-icon fa fa-pie-chart"></i>
 					<span class="menu-text">
-					Table
+					Angular Charts
 					</span>
+					<b class="arrow fa fa-angle-down"></b>
 				</a>
+					<ul class="submenu nav-show" uib-collapse="activeMenu!='chart'" true>
+						<li ng-class="{active: SubMenu=='piechart'}">
+							<a ui-sref="piechart" ng-click="SubMenu=(SubMenu!='piechart')?'piechart':'nosub'">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Pie & Line Chart
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+						<li ng-class="{active: SubMenu=='barchart'}">
+							<a ui-sref="barchart" ng-click="SubMenu=(SubMenu!='barchart')?'barchart':'nosub'">
+								<i class="menu-icon fa fa-caret-right"></i>
+								Line Chart
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+					</ul>
 			</li>
 			<li ng-class="{active: activeMenu == 'form'}">
 				<a href="javascript:" ng-click="activeMenu=(activeMenu!='form')?'form':'noMenu'">
