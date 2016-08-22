@@ -19,7 +19,8 @@
     "angular-toastr": "^1.7.0",
     "angular-spinner": "^0.8.1",
     "font-awesome": "fontawesome#^4.6.3",
-    "ngmap": "^1.17.3"
+    "ngmap": "^1.17.3",
+    "angular-touch": "^1.5.8"
   },
   "devDependencies": {},
   "overrides": {

@@ -78,6 +78,14 @@ demoApp.constant("httpConfig", {
         resolve: {
           isLoggedIn: isLoggedIn
         }
+      })
+       .state('slider', {
+        url: "/Slider",
+        controller: 'ChartsCtrl as chart',
+        templateUrl: "templates/Slider.html",
+        resolve: {
+          isLoggedIn: isLoggedIn
+        }
       });
 
     $urlRouterProvider.otherwise('/');
