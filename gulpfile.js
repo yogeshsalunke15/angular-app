@@ -32,7 +32,7 @@ var path = {
                     'bower_components/spin.js/spin.min.js',
                     'bower_components/angular-spinner/angular-spinner.min.js',
                     'bower_components/ngmap/build/scripts/ng-map.min.js',
-                    'node_modules/angular-chart.js/node_modules/chart.js/dist/Chart.min.js', 
+                    'node_modules/chart.js/dist/Chart.min.js', 
                     'node_modules/angular-chart.js/dist/angular-chart.min.js'
                 ],
         mincss: [   'bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -51,7 +51,7 @@ var path = {
 
     gulp.task('clean', function () {
         return gulp.src('www', {read: false})
-            .pipe(clean());
+                .pipe(clean());
     });
 
     gulp.task('bowerCopy', function() {
