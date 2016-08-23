@@ -1,0 +1,15 @@
+
+<div class="row outerdiv" style="margin-top:25px;">
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<div class="txt_center"><h3>Angular UI Bootstrap Slider</h3></div><br>		
+		    <div uib-carousel active="chart.active" interval="chart.myInterval" no-wrap="chart.noWrapSlides" >
+		      <div uib-slide ng-repeat="imgurl in chart.imageArray" index="$index" style="width:1375px;height:360px;">
+		        	<img ng-src="{{imgurl}}" style="margin:auto;">
+			        <div class="carousel-caption">
+			          <h4>Yogesh Salunke</h4>
+			        </div>
+		      </div>
+		    </div>
+  		
+	</div>
+</div>
